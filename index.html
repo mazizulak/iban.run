@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134253870-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-134253870-1');
+	</script>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>IBAN RUN - IBAN Shortener !</title>
+	<meta name="description" content="Shorten your IBAN in seconds">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<!--<link href="resources/css/bootstrap.min.css" rel="stylesheet">-->
+	<link href="resources/css/font-awesome.min.css" rel="stylesheet">
+	<link href="resources/css/main.css" rel="stylesheet">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="resources/img/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="resources/img/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="resources/img/icons/favicon-16x16.png">
+	<link rel="manifest" href="resources/img/icons/site.webmanifest">
+	<link rel="mask-icon" href="resources/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="resources/img/icons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#ffc40d">
+	<meta name="msapplication-config" content="resources/img/icons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body class="bgimg-1">
+
+	<!--main-->
+	<section class="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-6"> 
+					<!--logo-->
+					<div class="logo"><a href="https://iban.run"><img src="resources/img/ibanrun.png" width="80%" alt="logo"></a></div>
+					<!--logo end--> 
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12"> 
+
+					<!--welcome-message-->
+					<header class="welcome-message text-center">
+						<h1><span class="rotate">Paste IBAN to Shorten</span></h1>
+					</header>
+					<!--welcome-message end--> 
+
+					<!--sub-form-->
+					<div class="sub-form text-center">
+						<div class="row">
+							<div class="col-md-5 center-block col-sm-8 col-xs-11">
+								<form method="post" role="form" target="hiddenFrame" id="shortener">
+									<div class="input-group" style="margin-bottom: 10px;">
+										<input id="iban" type="text" class="form-control iban" placeholder="IBAN Here" required value="" name="iban">
+										<span class="input-group-btn">
+											<button style="font-weight: 800;" type="submit" class="btn btn-default" id="mc-subscribe" value="short" name="short">RUN</button>
+										</span> 
+									</div>
+									<div class="input-group" style="width: 100%;">
+										<div class="g-recaptcha" data-sitekey="6LejjpAUAAAAAJQ8bp_h-SRAGgGzerlUsWlJd55R" style="display: inline-block;"></div>
+									</div>
+								</form>
+								<p id="mc-notification"></p>
+							</div>
+						</div>
+						<div id="shortenedArea" class="row" style="display: none;">
+							<div class="col-md-5 center-block col-sm-8 col-xs-11">
+								<a href="https://iban.run/asdf" id="shortIban">iban.run/asdf</a><input id="customLink" type="text" name="shortlink" value="asdf" style="width: 150px; color: black; font-size: 18px;"> 
+
+								<button id="copy" class="btn-copy-clipboard" data-clipboard-target="#shortIban">Copy to Clipboard</button>
+
+								<form method="post" role="form" target="hiddenFrame" id="customizer" >
+									<button id="customize" class="btn-customize">Customize</button>
+								</form>
+
+
+								
+							</div>
+						</div>
+					</div>
+					<!--sub-form end--> 
+
+				</div>
+			</div>
+		</div>
+		<a href="#"><h4 align="center" style="color: black;margin-top: 150px; margin-right: 20px;">
+			<button onclick="analyticsEventSend('about_clicked');" class="btn-customize" style=" -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+			-webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+			box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);padding: 10px;" id="about" data-toggle="modal" data-target="#aboutModal">About
+		</button>
+	</h4>
+</a>
+</section>
+<!--main end--> 
+<!-- Modal -->
+<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">About</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				Iban.run does not have any information about the owner of the accounts published on this page, nor any other information about the owner of the accounts or the owners of these account numbers. Iban.run provides a page service for individuals and organizations to easily share their IBAN numbers.
+				<br><br>	
+				Iban.run does not have any technical knowledge and involvement in any illegal trade between accounts. Iban.run cannot know the trade between the money sender and the account holder and is not responsible in any way.
+				<br><br>
+				Some icons gathered from www.flaticon.com
+				<br>
+				Creator: <a href="https://www.linkedin.com/in/azizulak/" target="_blank" onclick="analyticsEventSend('aziz_linkedin_click');">M. Aziz Ulak</a>
+			</div>
+			<div class="modal-footer">
+				<button id="closeModal" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<iframe name="hiddenFrame" class="hide"></iframe>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="resources/js/jquery.backstretch.min.js"></script> 
+<script src="resources/js/wow.min.js"></script> 
+<script src="resources/js/jquery.form.min.js"></script> 
+<script src="resources/js/jquery.validate.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+<script src="resources/js/main.js"></script> 
+<script type="text/javascript">
+
+	var TR = {
+		title: "IBAN RUN - IBAN KISALTMAK",
+		header: "IBAN KISALTICI",
+		run_button: "KISALT",
+		copy: "Kopyala",
+		customize: "Düzenle",
+		placeholder: "Buraya IBAN Girin",
+		modal_header: "Hakkımızda",
+		modal_content: "Iban.run'ın bu sayfada yayınlanan hesapların sahibiyle herhangi bir bağı, ortaklığı yada bu hesap numaralarının sahibi hakkında yayınlananların dışında herhangi bir bilgisi bulunmamaktadır. Iban.run, kişi ve kurumların IBAN numaralarını kolayca paylaşabilmeleri için bir sayfa hizmeti vermektedir. <br><br>Hesaplar arasında olabilecek herhangi bir yasadışı ticaretten Iban.run'ın teknik manada bilgisi ve dahiliyeti bulumaz. Iban.run para gönderen ve hesap sahibi arasındaki ticareti kesinlikle bilemez ve hiçbir şekilde sorumluluk sahibi değildir.<br><br>Bazı ikonlar www.flaticon.com 'dan alınmıştır.<br>Geliştirici: <a href=\"https://www.linkedin.com/in/azizulak/\"  target=\"_blank\" onclick=\"analyticsEventSend('aziz_linkedin_click');\">M. Aziz Ulak</a>",
+		modal_button: "Kapat",
+		copied: "Kopyalandı!",
+		save: "Kaydet",
+		custom_link_not_available: "Bu link müsait değil. Lütfen bir başka isim seçiniz",
+		invalid_iban: "Lütfen geçerli bir IBAN giriniz",
+		captcha_failed: "Lütfen güvenlik kontrolü kutucuğunu işaretleyiniz"
+	};
+
+	var EN = {
+		title: "IBAN RUN - IBAN Shortener !",
+		header: "Paste IBAN to Shorten",
+		run_button: "RUN",
+		copy: "Copy",
+		customize: "Customize",
+		placeholder: "IBAN Here",
+		modal_header: "About",
+		modal_content: "Iban.run does not have any information about the owner of the accounts published on this page, nor any other information about the owner of the accounts or the owners of these account numbers. Iban.run provides a page service for individuals and organizations to easily share their IBAN numbers.<br><br>	Iban.run does not have any technical knowledge and involvement in any illegal trade between accounts. Iban.run cannot know the trade between the money sender and the account holder and is not responsible in any way.<br><br>Some icons gathered from www.flaticon.com<br>Creator: <a href=\"https://www.linkedin.com/in/azizulak/\" target=\"_blank\" onclick=\"analyticsEventSend('aziz_linkedin_click');\">M. Aziz Ulak</a>",
+		copied: "Copied!",
+		save: "Save",
+		custom_link_not_available: "This link is not available. Please pick another one",
+		invalid_iban: "Please use valid IBAN",
+		captcha_failed: "Please Verify Captcha"
+	}
+
+
+	var oldfolder = "";
+	var userLang = navigator.language || navigator.userLanguage; 
+
+	var LANG;
+	if(userLang === "tr-TR"){
+		LANG = TR;
+	}else{
+		LANG = EN;
+	}
+
+	$("#mc-subscribe").text(LANG.run_button);
+	$(".rotate").text(LANG.header);
+	$("#copy").text(LANG.copy);
+	$("#customize").text(LANG.customize);
+	$("#iban").attr("placeholder", LANG.placeholder);
+	document.title = LANG.title;
+	$(".modal-body").html(LANG.modal_content);
+	$(".modal-title").text(LANG.modal_header);
+	$("#closeModal").text(LANG.modal_button);
+	$("#about").text(LANG.modal_header);
+
+	function analyticsEventSend(input){
+		gtag('event', input, {
+		  'event_category': 'ButtonClick'
+		});
+	}
+
+
+	function isValidIBANNumber(input) {
+		var iban = String(input).toUpperCase().replace(/[^A-Z0-9]/g, ''),
+		code = iban.match(/^([A-Z]{2})(\d{2})([A-Z\d]+)$/),
+		digits;
+		if (!code) {
+			return 0;
+		}
+		digits = (code[3] + code[1] + code[2]).replace(/[A-Z]/g, function (letter) {
+			return letter.charCodeAt(0) - 55;
+		});
+		return mod97(digits);
+	}
+	function mod97(string) {
+		var checksum = string.slice(0, 2), fragment;
+		for (var offset = 2; offset < string.length; offset += 7) {
+			fragment = String(checksum) + string.substring(offset, offset + 7);
+			checksum = parseInt(fragment, 10) % 97;
+		}
+		return checksum;
+	}
+
+
+	$(document).ready(function(){
+		$("#shortener").submit(function(event){
+			event.preventDefault();
+			$("#customLink").hide();
+			var recaptcha = $("#g-recaptcha-response").val();
+			var check = isValidIBANNumber($("#iban").val());
+			if(check != 1){
+				alert(LANG.invalid_iban);
+				return;
+			}
+			$.post("shortener.php",{
+				"g-recaptcha-response": recaptcha,
+				"iban":$("#iban").val()
+			},function(response){
+				if(response == "captchafailed"){
+					alert(LANG.captcha_failed);
+				}else if(response == "folderfailed"){
+					alert("Folder Error");
+				}else{
+					var x = document.getElementById("shortenedArea");
+					x.style.display = "block";
+					var y = document.getElementById("shortIban");
+					y.innerHTML = "iban.run/"+response;
+					y.href = "https://iban.run/"+response;
+					$("#customLink").val(response);
+					$("#shortener").hide();
+					oldfolder = response;
+				}
+
+				console.log("Res: ", response);
+
+			});
+		});
+	});
+
+
+	$(document).ready(function(){
+		$("#customizer").submit(function(event){
+			event.preventDefault();
+			if($("#customize").text() == LANG.save ){
+				gtag('event', 'save_button', {'event_category': 'ButtonClick'});
+				
+				$("#customLink").hide();
+				$.post("customizer.php",{
+					"oldfolder": oldfolder,
+					"newfolder":$("#customLink").val()
+				},function(response){
+              //alert(response);   
+              if(response == "success"){
+              	$("#customize").hide();   
+              	$("#shortIban").text("iban.run/"+$("#customLink").val()); 
+              	document.getElementById("shortIban").href = "https://iban.run/"+$("#customLink").val();
+              	$("#customLink").hide();
+              }else{
+              	alert(LANG.custom_link_not_available);
+              	$("#customize").html(LANG.customize);   
+              	$("#shortIban").text("iban.run/"+oldfolder); 
+              	$("#customLink").hide();
+              } });
+
+			}else{
+				
+				gtag('event', 'customize_button', {'event_category': 'ButtonClick'});
+				$("#customLink").show();
+				$("#customize").html(LANG.save);
+				$("#shortIban").text("iban.run/");
+			}
+
+		});
+	});
+
+
+
+	var btn = document.getElementById('copy');
+	var clipboard = new ClipboardJS('.btn-copy-clipboard');
+	clipboard.on('success', function(e) {
+		console.log(e);
+		gtag('event', 'copy_short_link', {'event_category': 'ButtonClick'});
+	});
+	clipboard.on('error', function(e) {
+		console.log(e);
+	});
+
+	$(document).ready(function(){
+		$('.btn-copy-clipboard').tooltip({title: LANG.copied, trigger: "click", placement: "bottom"}); 
+	});
+</script>
+</body>
+</html>
